@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c1143b41-5038-4c38-a72d-32c40e3339fd" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="gitubFlow" doc:id="b433882b-e290-4b7e-a676-808d8dcbe81e" >
+		<http:listener doc:name="Listener" doc:id="ad3c93ce-2ef3-4f61-9fd1-23bba5f8e6cb" config-ref="HTTP_Listener_config" path="/77"/>
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="e2bdeb7c-757f-4e25-8c07-4a6b9bada1db" />
+	</flow>
+</mule>
